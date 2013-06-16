@@ -207,6 +207,8 @@ baidu.ui.ScrollBar = baidu.ui.createUI(function(options) {
             evt = evt || window.event,
             detail = evt.detail || -evt.wheelDelta;
         baidu.event.preventDefault(evt);
+		//阻止冒泡
+		baidu.event.stopPropogation(evt);
         me._basicScroll(detail > 0 ? 'next' : 'prev');
     },
 
